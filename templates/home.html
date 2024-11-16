@@ -1,0 +1,15 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+
+{% block title %}Home - My Website{% endblock %}
+
+{% block content %}
+  <div class="home-container">
+    <h1>Welcome to My Website!</h1>
+    <p>This is the home page. You can manage your tasks, check notifications, and more.</p>
+
+    <div class="logout-container">
+      <a href="{% url 'logout' %}" class="btn-logout">Logout</a>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+{% block content %}
+<body>
+    <div class="form-container">
+        <h2>Register</h2>
+        
+        {% if messages %}
+        <div class="error-message">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+        
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Register</button>
+        </form>
+        
+        <a href="{% url 'login' %}">Already have an account? Login here</a>
+    </div>
+</body>
+{% endblock %}
